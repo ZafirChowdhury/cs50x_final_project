@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Transcript
+{% endblock %}
+
+{% block header %}
+    Transcript
+{% endblock %}
+
+{% block main %}
+
+    <div style="display: flex; align-items: center; justify-content: center;">
+        <form action="/add" method="get">
+            <button type="submit">Add</button>
+        </form>
+
+        <form action="/edit" method="get" >
+            <button type="submit">Edit</button>
+        </form>
+
+        <form action="/remove" method="get">
+            <button type="submit">Remove</button>
+        </form>
+
+        <form action="/change_password" method="get">
+            <button type="submit">Change  password</button>
+        </form>
+    </div>
+
+    <div class="section"></div>
+
+    {% if no_user_data %}
+        <h1>You have not entered any grades</h1>
+    {% else %}
+    <div class="section">
+        <P>CGPA : {{ cgpa }}</P>
+        <p>Done credit : {{ done_credit }}</p>
+    </div>
+
+    {% for i in data %}
+            <p>{{ i.semester }}</p>
+            <p>GPA : {{ i.gpa }}</p>
+
+                <table>
+                    <tr>
+                        <th>Course Title</th>
+                        <th>Credit Count</th>
+                        <th>Grade</th>
+                    </tr>
+
+                    {% for j in i.cources %}
+                    <tr>
+                        <td>{{ j.course_id }}</td>
+                        <td>{{ j.credit_count }}</td>
+                        <td>{{ j.gpa }}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+
+    {% endfor %}
+
+    {% endif %}
+
+
+    <form action="/logout" class="section">
+        <button type="submit">Logout</button>
+    </form>
+
+
+{% endblock %}

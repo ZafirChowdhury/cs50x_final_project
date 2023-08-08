@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Edit
+{% endblock %}
+
+{% block header %}
+    GradeBook
+{% endblock %}
+
+{% block main %}
+
+    <p>What would you like to remove?</p>
+    <div class="section">
+        <form action="/edit" method="post">
+            <p>Select semester if you want to change the name acrosss the entire semester.</p>
+            <p>Select course if you want to chnage the semester/name/credit count/grade of a course.</p>
+            <select name="choice">
+                <option value="semester">Semester</option>
+                <option value="course">Course</option>
+            </select>
+            <div style="margin-top: 25px;">
+            <button type="submit">Next</button>
+            </div>
+        </form>
+    </div>
+
+{% endblock %}

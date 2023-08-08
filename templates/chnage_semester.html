@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Change Semester
+{% endblock %}
+
+{% block header %}
+    GradeBook
+{% endblock %}
+
+{% block main %}
+
+    <div style="display: flex; align-items: center; justify-content: center;">
+        <form style="display: flex; align-items: center; justify-content: center;" action="/chnage_semester" method="post">
+            <h3>Change</h3>
+                <input autocomplete="off" autofocus name="from" placeholder="Old semester name" type="text">
+            <h3>To</h3>
+                <input autocomplete="off" autofocus name="to" placeholder="New semester name" type="text">
+            <button type="submit">Change</button>
+        </form>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Remove
+{% endblock %}
+
+{% block header %}
+    GradeBook
+{% endblock %}
+
+{% block main %}
+
+    <p>What would you like to remove?</p>
+    <div class="section">
+        <form action="/remove" method="post">
+            <input autocomplete="off" autofocus name="rm" placeholder="Semester/Course name" type="text">
+            <select name="choice">
+                <option value="semester">Semester</option>
+                <option value="course">Course</option>
+            </select>
+            <div style="margin-top: 25px;">
+            <button type="submit">Next</button>
+            </div>
+        </form>
+    </div>
+
+{% endblock %}

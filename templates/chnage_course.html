@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Change Course
+{% endblock %}
+
+{% block header %}
+    GradeBook
+{% endblock %}
+
+{% block main %}
+    {% if not choice %}
+    <p>What would you like to change?</p>
+    <div class="section">
+        <form action="/chnage_course" method="post">
+
+            <select name="choice">
+                <option value="course_id">Course ID/Name</option>
+                <option value="credit_count">Credit count</option>
+                <option value="gpa">Grade</option>
+            </select>
+
+            <div style="margin-top: 25px;">
+                <button type="submit">Next</button>
+            </div>
+
+        </form>
+    </div>
+    {% else %}
+
+        <form action="chnage_course_action" method="post" style="text-align: center;">
+            <p>Please enter the Semester and Course ID/Name that you want to edit.</p>
+            <input autocomplete="off" autofocus name="semester" placeholder="Semester" type="text">
+            <input autocomplete="off" autofocus name="course_id" placeholder="Course ID/Name" type="text">
+
+            <div style="display: flex; align-items: center; justify-content: center;">
+                <h3>Change to</h3>
+                    <input autocomplete="off" autofocus name="to" placeholder="{{ choice }}" type="text">
+                    <input type="hidden" name="choice" value="{{ choice }}">
+                    <button type="submit">Change</button>
+            </div>
+        </form>
+
+    {% endif %}
+
+
+{% endblock %}
