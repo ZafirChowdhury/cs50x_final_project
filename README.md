@@ -1,3 +1,4 @@
+This is my final project for CS50X and the second project that I ever did.
 # GRADE TRACKER
 #### Video Demo:  https://youtu.be/fgkI9mjhSCY
 #### Description:
@@ -52,25 +53,6 @@ Remove Course: Remove courses from the gradebook.
 Change Password: Change your account password.
 Log Out: Log out of your account.
 
-Routes and Views:
-
-/: This is the main page of the application. If a user is not logged in, they are redirected to the login page. If a user is logged in, their grade data is retrieved from the database, and their cumulative GPA (CGPA) and semester-wise GPA information are calculated and displayed.
-
-/register: This route handles user registration. It checks for valid input, hashes the password, and inserts the user's information into the database.
-
-/login: Handles user login. It checks the entered credentials against the database, and if they match, the user is logged in by storing their user ID in the session.
-
-/logout: Clears the user session, effectively logging them out.
-
-/add: Allows users to add courses to their gradebook. Users must be logged in to access this route. The user selects the semester and the number of courses they want to add.
-
-/pack: Collects data for the courses being added and inserts them into the database.
-
-/remove: Allows users to remove courses or entire semesters from their gradebook.
-
-/edit: Provides options to either change semesters or edit courses.
-
-/change_password: Allows users to change their account password.
-
-/apology: Displays error messages that are stored in the session and clears them.
+After submission I found out that the “Edit course” does not work properly. Too lazy to fix it now.
+It doesn't show any errors but it does not update the database.
 
